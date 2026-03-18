@@ -3,6 +3,12 @@
   --scale: 2;
 }
 
+@font-face {
+  font-family: 'Mutated Small';
+  src: url(fonts/Mutated\ Small.ttf);
+  font-display: swap;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -10,11 +16,13 @@ html {
 
 body {
   background-color: var(--bg);
+  height: fit-content;
+  width: stretch;
 }
 
 #orpheus-flag-link {
   margin: 0;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   height: fit-content;
@@ -25,4 +33,52 @@ body {
   height: calc(var(--scale) * 32px);
   width: calc(var(--scale) * 56px);
   image-rendering: pixelated;
+}
+
+h1, h2, h3, p {
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  font-synthesis-weight: none;
+}
+
+h1 {
+  font-family: 'Mutated Small';
+  font-size: calc(var(--scale) * 36px);
+  line-height: calc(var(--scale) * 42px);
+}
+
+h2 {
+  font-family: 'Mutated Small';
+  font-size: calc(var(--scale) * 24);
+  line-height: calc(var(--scale) * 28);
+}
+
+.large-text {
+  font-family: 'Mutated Small';
+  font-size: calc(var(--scale) * 16px);
+  line-height: calc(var(--scale) * 18px);
+}
+
+.medium-text {
+  font-family: 'Mutated Small';
+  font-size: calc(var(--scale) * 8px);
+  line-height: calc(var(--scale) * 9px);
+}
+
+.small-text {
+  font-family: 'Mutated Small';
+  font-size: calc(var(--scale) * 5px);
+  line-height: calc(var(--scale) * 6px);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
