@@ -1,4 +1,28 @@
+:root {
+  --bg: #71ffbc;
+  --scale: 2;
+}
+
 html {
   height: 100%;
   width: 100%;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+#orpheus-flag-link {
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  width: fit-content;
+}
+
+#orpheus-flag {
+  height: calc(var(--scale) * 32px);
+  width: calc(var(--scale) * 56px);
+  image-rendering: pixelated;
 }
