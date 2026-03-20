@@ -9,6 +9,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Mutated Medium';
+  src: url(fonts/Mutated\ Medium.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mutated Large';
+  src: url(fonts/Mutated\ Large.ttf);
+  font-display: swap;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -42,25 +54,25 @@ h1, h2, h3, p {
 }
 
 h1 {
-  font-family: 'Mutated Small';
+  font-family: 'Mutated Large';
   font-size: calc(var(--scale) * 36px);
   line-height: calc(var(--scale) * 42px);
 }
 
 h2 {
-  font-family: 'Mutated Small';
+  font-family: 'Mutated Large';
   font-size: calc(var(--scale) * 24);
   line-height: calc(var(--scale) * 28);
 }
 
 .large-text {
-  font-family: 'Mutated Small';
+  font-family: 'Mutated Large';
   font-size: calc(var(--scale) * 16px);
   line-height: calc(var(--scale) * 18px);
 }
 
 .medium-text {
-  font-family: 'Mutated Small';
+  font-family: 'Mutated Medium';
   font-size: calc(var(--scale) * 8px);
   line-height: calc(var(--scale) * 9px);
 }
