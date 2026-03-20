@@ -1,8 +1,11 @@
+const FAQ_HOLDER = document.getElementById("faq-holder")
+
 var faqs = [
     FaqData("Is this currently running?", "No. Currently this YSWS is only in development. " +
-            "It is being proposed for the 2026 summer internship although if there is enough " +
+            "It is being proposed for the 2026 summer internship, although if there is enough " +
             "interest, I may still try to run it even if I don't get accepted."),
-    FaqData("Am I elligeable to participate?", "If you're age 13-18 (inclusive), yes!"),
+    FaqData("Am I elligeable to participate?", "If you're age is somewhere from 13 to 18 " +
+            "(inclusive), yes!"),
     FaqData("What are the mutations?", "Each mutation asks you to add a feature to your game. " +
             "Some mutations may be really specific while others may be quite broad. " +
             "Each mutation also has a complexity, a minimum hour count, flask rate, and a DNA " +
@@ -34,6 +37,39 @@ var faqs = [
             "that rewards teens across the world for making and shipping technical projects. " + 
             "You don't just have to take it from me. You can look them up if you want."),
 ]
+
+for(var i = 0; i < faqs.length; i++) {
+    var faqData = faqs[i];
+
+    var faqPair = document.createElement("div");
+    faqPair.classList.add(["faq-pair"]);
+    faqPair.id = `faq-pair-${i}`;
+    faqPair.setAttribute("open", "false");
+    FAQ_HOLDER.appendChild(faqPair);
+
+    var faqButton = document.createElement("button");
+    faqButton.classList.add(["faq-question"]);
+    faqButton.classList.add(["medium-text"]);
+    faqButton.classList.add(["text-left"]);
+    faqButton.id = `faq-question-${i}`;
+    faqButton.setAttribute("onclick", `faqQuestionPressed(${i})`);
+    faqButton.innerHTML = faqData.question;
+    faqPair.appendChild(faqButton);
+
+    var faqAnswer = document.createElement("p");
+    faqAnswer.classList.add(["faq-answer"]);
+    faqAnswer.classList.add(["small-text"]);
+    faqAnswer.classList.add(["text-left"]);
+    faqAnswer.id = `faq-answer-${i}`;
+    faqAnswer.innerHTML = faqData.answer;
+    faqPair.appendChild(faqAnswer);
+}
+
+function faqQuestionPressed(questionNum) {
+    var faqPair = document.getElementById(`faq-pair-${questionNum}`);
+    var isOpen = true ? faqPair.getAttribute("open") == "true" : false;
+    faqPair.setAttribute("open", String(!isOpen));
+}
 
 function FaqData(question, answer) {
     return {
