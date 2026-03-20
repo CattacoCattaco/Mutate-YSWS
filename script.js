@@ -4,7 +4,7 @@ var faqs = [
     FaqData("Is this currently running?", "No. Currently this YSWS is only in development. " +
             "It is being proposed for the 2026 summer internship, although if there is enough " +
             "interest, I may still try to run it even if I don't get accepted."),
-    FaqData("Am I elligeable to participate?", "If you're age is somewhere from 13 to 18 " +
+    FaqData("Am I eligeable to participate?", "If you're age is somewhere from 13 to 18 " +
             "(inclusive), yes!"),
     FaqData("What are the mutations?", "Each mutation asks you to add a feature to your game. " +
             "Some mutations may be really specific while others may be quite broad. " +
@@ -22,11 +22,11 @@ var faqs = [
             "that would be considered a significant feature."),
     FaqData("What do you mean by \"Adapt your mutations to fit your game\"? / How creative " +
             "am I expected to be when adding my mutations?", "When adding mutations, you should " +
-            "try to add them in a way that fits your game. If you are asked yo add something " +
-            "that doesn't feel like it has a place in your game, try to find a way to make it " +
-            "fit rather than adding it in a way that feels out of place with the rest of your " +
-            "game. If you don't think you can, try not to pick that mutation or you can use your " +
-            "DNA to refresh your options."),
+            "try to add them in a way that fits your game. If you are asked to add something " +
+            "that doesn't feel like it meshes with the rest of your game, try to find a way to " +
+            "make it fit rather than adding it in a way that feels out of place with the rest of " +
+            "your game. If you don't think you can, try not to pick that mutation or you can use " +
+            "your DNA to refresh your options."),
     FaqData("Can I use AI?", "AI generated visual and audio assets are strictly prohibitted. " +
             "Using AI to generate code is strongly discouraged but you can use up to 30% AI " +
             "generated code. Again though, especially if you're a beginner, I'd encourage you " +

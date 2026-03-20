@@ -67,7 +67,7 @@ body {
   background-image: url(sprites/dither_to_faq.png);
   background-repeat: repeat-x;
   background-size: calc(var(--scale) * 8px) calc(var(--scale) * 23px);
-  margin: 0 calc(var(--scale) * -4px);
+  margin: calc(var(--scale) * 12px) calc(var(--scale) * -4px) 0;
   height: calc(var(--scale) * 23px);
   width: stretch;
   image-rendering: pixelated;
@@ -149,13 +149,13 @@ h2 {
 .medium-text {
   font-family: 'Mutated Medium';
   font-size: calc(var(--scale) * 8px);
-  line-height: calc(var(--scale) * 9px);
+  line-height: calc(var(--scale) * 10px);
 }
 
 .small-text {
   font-family: 'Mutated Small';
   font-size: calc(var(--scale) * 5px);
-  line-height: calc(var(--scale) * 6px);
+  line-height: calc(var(--scale) * 7px);
 }
 
 .text-left {
