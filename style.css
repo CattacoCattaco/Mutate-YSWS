@@ -63,11 +63,21 @@ body {
   margin: 0 auto;
 }
 
+#faq-dither {
+  background-image: url(sprites/dither_to_faq.png);
+  background-repeat: repeat-x;
+  background-size: calc(var(--scale) * 8px) calc(var(--scale) * 23px);
+  margin: 0 calc(var(--scale) * -4px);
+  height: calc(var(--scale) * 23px);
+  width: stretch;
+  image-rendering: pixelated;
+}
+
 #faq-holder {
   width: fit-content;
-  margin: calc(var(--scale) * 12px) calc(var(--scale) * -4px) 0;
+  margin: 0 calc(var(--scale) * -4px);
   padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px);
-  background-color: #0aa0cb;
+  background-color: #12e5f0;
 }
 
 .faq-pair {
