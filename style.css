@@ -107,9 +107,7 @@ body {
 }
 
 .faq-pair[open="false"] > .faq-answer {
-  visibility: hidden;
-  height: 0;
-  margin: 0;
+  display: none;
 }
 
 .faq-pair[open="true"] > .faq-answer {

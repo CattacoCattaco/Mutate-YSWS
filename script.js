@@ -27,6 +27,9 @@ var faqs = [
             "make it fit rather than adding it in a way that feels out of place with the rest of " +
             "your game. If you don't think you can, try not to pick that mutation or you can use " +
             "your DNA to refresh your options."),
+    FaqData("What if I want to add features unrelated to my mutations?", "If you want to add " +
+            "features that aren't tied to your current mutation and aren't based on bugs you " +
+            "encounter while working on your mutation, you should try to add them between mutations."),
     FaqData("Can I use AI?", "AI generated visual and audio assets are strictly prohibitted. " +
             "Using AI to generate code is strongly discouraged but you can use up to 30% AI " +
             "generated code. Again though, especially if you're a beginner, I'd encourage you " +
@@ -53,7 +56,7 @@ for(var i = 0; i < faqs.length; i++) {
     faqButton.classList.add(["text-left"]);
     faqButton.id = `faq-question-${i}`;
     faqButton.setAttribute("onclick", `faqQuestionPressed(${i})`);
-    faqButton.innerHTML = faqData.question;
+    faqButton.textContent = faqData.question;
     faqPair.appendChild(faqButton);
 
     var faqAnswer = document.createElement("p");
@@ -61,7 +64,7 @@ for(var i = 0; i < faqs.length; i++) {
     faqAnswer.classList.add(["small-text"]);
     faqAnswer.classList.add(["text-left"]);
     faqAnswer.id = `faq-answer-${i}`;
-    faqAnswer.innerHTML = faqData.answer;
+    faqAnswer.textContent = faqData.answer;
     faqPair.appendChild(faqAnswer);
 }
 
