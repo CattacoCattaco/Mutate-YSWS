@@ -1,3 +1,4 @@
+const ORPHEUS_FLAG = document.getElementById("orpheus-flag")
 const FLAG_AREA = document.getElementById("orpheus-flag-area")
 const FAQ_HOLDER = document.getElementById("faq-holder")
 
@@ -70,7 +71,23 @@ for(let i = 0; i < FAQS.length; i++) {
 }
 
 rescaleFlagArea()
-new ResizeObserver(rescaleFlagArea).observe(document.getElementById("orpheus-flag"))
+new ResizeObserver(rescaleFlagArea).observe(ORPHEUS_FLAG)
+
+function flagHovered() {
+    ORPHEUS_FLAG.setAttribute("src", "sprites/orpheus_flag_hover.png")
+}
+
+function flagUnhovered() {
+    ORPHEUS_FLAG.setAttribute("src", "sprites/orpheus_flag.png")
+}
+
+function flagPressed() {
+    ORPHEUS_FLAG.setAttribute("src", "sprites/orpheus_flag_press.png")
+}
+
+function flagUnpressed() {
+    ORPHEUS_FLAG.setAttribute("src", "sprites/orpheus_flag_hover.png")
+}
 
 function rescaleFlagArea() {
     let scale = window.getComputedStyle(FLAG_AREA).getPropertyValue('--scale');
