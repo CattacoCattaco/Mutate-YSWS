@@ -1,6 +1,7 @@
+const FLAG_AREA = document.getElementById("orpheus-flag-area")
 const FAQ_HOLDER = document.getElementById("faq-holder")
 
-var faqs = [
+const FAQS = [
     FaqData("Is this currently running?", "No. Currently this YSWS is only in development. " +
             "It is being proposed for the 2026 summer internship, although if there is enough " +
             "interest, I may still try to run it even if I don't get accepted."),
@@ -41,16 +42,16 @@ var faqs = [
             "You don't just have to take it from me. You can look them up if you want."),
 ]
 
-for(var i = 0; i < faqs.length; i++) {
-    var faqData = faqs[i];
+for(let i = 0; i < FAQS.length; i++) {
+    let faqData = FAQS[i];
 
-    var faqPair = document.createElement("div");
+    let faqPair = document.createElement("div");
     faqPair.classList.add(["faq-pair"]);
     faqPair.id = `faq-pair-${i}`;
     faqPair.setAttribute("open", "false");
     FAQ_HOLDER.appendChild(faqPair);
 
-    var faqButton = document.createElement("button");
+    let faqButton = document.createElement("button");
     faqButton.classList.add(["faq-question"]);
     faqButton.classList.add(["medium-text"]);
     faqButton.classList.add(["text-left"]);
@@ -59,7 +60,7 @@ for(var i = 0; i < faqs.length; i++) {
     faqButton.textContent = faqData.question;
     faqPair.appendChild(faqButton);
 
-    var faqAnswer = document.createElement("p");
+    let faqAnswer = document.createElement("p");
     faqAnswer.classList.add(["faq-answer"]);
     faqAnswer.classList.add(["small-text"]);
     faqAnswer.classList.add(["text-left"]);
@@ -68,9 +69,129 @@ for(var i = 0; i < faqs.length; i++) {
     faqPair.appendChild(faqAnswer);
 }
 
+rescaleFlagArea()
+new ResizeObserver(rescaleFlagArea).observe(document.getElementById("orpheus-flag"))
+
+function rescaleFlagArea() {
+    let scale = window.getComputedStyle(FLAG_AREA).getPropertyValue('--scale');
+    scale = parseInt(scale)
+    let unscaledCoords = [
+        0, 7,
+        1, 7,
+        1, 8,
+        3, 8,
+        3, 9,
+        5, 9,
+        5, 10,
+        7, 10,
+        7, 11,
+        10, 11,
+        10, 12,
+        13, 12,
+        13, 13,
+        14, 13,
+        14, 14,
+        14, 15,
+        15, 13,
+        16, 13,
+        16, 11,
+        17, 11,
+        17, 9,
+        18, 9,
+        18, 7,
+        19, 7,
+        19, 4,
+        27, 4,
+        27, 5,
+        30, 5,
+        30, 6,
+        33, 6,
+        33, 7,
+        35, 7,
+        35, 8,
+        39, 8,
+        39, 9,
+        44, 9,
+        44, 8,
+        47, 8,
+        47, 7,
+        51, 7,
+        51, 6,
+        53, 6,
+        53, 7,
+        54, 7,
+        54, 8,
+        55, 8,
+        55, 9,
+        56, 9,
+        56, 11,
+        55, 11,
+        55, 12,
+        54, 12,
+        54, 13,
+        53, 13,
+        53, 14,
+        52, 14,
+        52, 15,
+        50, 15,
+        50, 16,
+        49, 16,
+        49, 17,
+        47, 17,
+        47, 18,
+        45, 18,
+        45, 19,
+        41, 19,
+        41, 20,
+        38, 20,
+        38, 19,
+        32, 19,
+        32, 18,
+        28, 18,
+        28, 17,
+        25, 17,
+        25, 16,
+        21, 16,
+        21, 15,
+        16, 15,
+        16, 16,
+        17, 16,
+        17, 17,
+        18, 17,
+        18, 19,
+        17, 19,
+        17, 22,
+        16, 22,
+        16, 23,
+        15, 23,
+        15, 24,
+        16, 24,
+        16, 26,
+        15, 26,
+        15, 27,
+        11, 27,
+        11, 28,
+        6, 28,
+        6, 27,
+        3, 27,
+        3, 26,
+        1, 26,
+        1, 25,
+        0, 25,
+    ]
+
+    let coordsString = ""
+    for(let i = 0; i < unscaledCoords.length; i++) {
+        coordsString += `${unscaledCoords[i] * scale}, `
+    }
+    coordsString += `${unscaledCoords[0] * scale}, ${unscaledCoords[1] * scale}`
+
+    FLAG_AREA.setAttribute("coords", coordsString)
+}
+
 function faqQuestionPressed(questionNum) {
-    var faqPair = document.getElementById(`faq-pair-${questionNum}`);
-    var isOpen = true ? faqPair.getAttribute("open") == "true" : false;
+    let faqPair = document.getElementById(`faq-pair-${questionNum}`);
+    let isOpen = true ? faqPair.getAttribute("open") == "true" : false;
     faqPair.setAttribute("open", String(!isOpen));
 }
 

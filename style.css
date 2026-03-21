@@ -62,7 +62,15 @@ body {
   width: fit-content;
 }
 
+area {
+  scale: var(--scale);
+}
+
 #orpheus-flag {
+  margin: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
   height: calc(var(--scale) * 32px);
   width: calc(var(--scale) * 56px);
   image-rendering: pixelated;
