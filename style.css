@@ -10,45 +10,15 @@
   }
 }
 
-@media (width >= 1600px) and (width < 2200px) {
+@media (width >= 1600px) and (width < 2700px) {
   :root {
     --scale: 3;
   }
 }
 
-@media (width >= 2200px) and (width < 2700px) {
+@media (width >= 2700px) {
   :root {
     --scale: 4;
-  }
-}
-
-@media (width >= 2700px) and (width < 3200px) {
-  :root {
-    --scale: 5;
-  }
-}
-
-@media (width >= 3200px) and (width < 3800px) {
-  :root {
-    --scale: 7;
-  }
-}
-
-@media (width >= 3800px) and (width < 4300px) {
-  :root {
-    --scale: 8;
-  }
-}
-
-@media (width >= 4300px) and (width < 4800px) {
-  :root {
-    --scale: 9;
-  }
-}
-
-@media (width >= 4800px) and (width < 5300px) {
-  :root {
-    --scale: 10;
   }
 }
 
