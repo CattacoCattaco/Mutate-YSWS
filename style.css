@@ -1,6 +1,55 @@
-:root {
-  --bg: #71ffbc;
-  --scale: 2;
+@media (width < 450px) {
+  :root {
+    --scale: 1;
+  }
+}
+
+@media (width >= 450px) and (width < 1400px) {
+  :root {
+    --scale: 2;
+  }
+}
+
+@media (width >= 1400px) and (width < 1900px) {
+  :root {
+    --scale: 3;
+  }
+}
+
+@media (width >= 1900px) and (width < 2400px) {
+  :root {
+    --scale: 4;
+  }
+}
+
+@media (width >= 2400px) and (width < 2900px) {
+  :root {
+    --scale: 5;
+  }
+}
+
+@media (width >= 2900px) and (width < 3500px) {
+  :root {
+    --scale: 7;
+  }
+}
+
+@media (width >= 3500px) and (width < 4000px) {
+  :root {
+    --scale: 8;
+  }
+}
+
+@media (width >= 4000px) and (width < 4500px) {
+  :root {
+    --scale: 9;
+  }
+}
+
+@media (width >= 4500px) and (width < 5000px) {
+  :root {
+    --scale: 10;
+  }
 }
 
 @font-face {
@@ -27,7 +76,7 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: #71ffbc;
   height: fit-content;
   width: stretch;
   padding: calc(var(--scale) * 4px) calc(var(--scale) * 4px) 0 calc(var(--scale) * 4px);
@@ -74,7 +123,7 @@ body {
 }
 
 #faq-holder {
-  width: fit-content;
+  width: stretch;
   margin: 0 calc(var(--scale) * -4px);
   padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px);
   background-color: #12e5f0;
