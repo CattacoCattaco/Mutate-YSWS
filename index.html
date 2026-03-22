@@ -13,20 +13,22 @@
   <map name="flag-map">
     <area shape="poly" href="https://hackclub.com/" alt="Orpheus Flag" id="orpheus-flag-area" onmouseenter="flagHovered()" onmouseleave="flagUnhovered()" onmousedown="flagPressed()" onmouseup="flagUnpressed()">
   </map>
-  <br>
   <h1 class="text-center" id="mutate-header">Mutate</h1>
   <p class="large-text text-center" id="motto-subheader">Adapt your game to fit your mutations.<br>Adapt your mutations to fit your game.</h2>
-  <ol id="process-description">
-    <li class="medium-text">Take on a new mutation</li>
-    <li class="medium-text">Choose a mutation complexity</li>
-    <li class="medium-text">Choose which mutation you prefer</li>
-    <li class="medium-text">Add it to your game (Try to get creative to make it fit your game)</li>
-    <li class="medium-text">Complete the mutation with a short devlog describing what you did</li>
-    <li class="medium-text">Repeat</li>
-    <li class="medium-text">When your game is ready, ship it to win prizes</li>
-    <li class="medium-text">Once you ship, you can add more mutations or start a new game</li>
-  </ol>
-  <div id="faq-dither"></div>
+  <div class="dither-bar" id="steps-dither"></div>
+  <div id="steps-holder">
+    <ol id="process-description">
+      <li class="medium-text">Take on a new mutation</li>
+      <li class="medium-text">Choose a mutation complexity</li>
+      <li class="medium-text">Choose which mutation you prefer</li>
+      <li class="medium-text">Add it to your game (Try to get creative to make it fit your game)</li>
+      <li class="medium-text">Complete the mutation with a short devlog describing what you did</li>
+      <li class="medium-text">Repeat</li>
+      <li class="medium-text">When your game is ready, ship it to win prizes</li>
+      <li class="medium-text">Once you ship, you can add more mutations or start a new game</li>
+    </ol>
+  </div>
+  <div class="dither-bar" id="faq-dither"></div>
   <div id="faq-holder"></div>
   <script src="script.js"></script>
 </body>

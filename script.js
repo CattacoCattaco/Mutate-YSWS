@@ -38,9 +38,9 @@ const FAQS = [
             "to try to avoid using AI to generate code, as an overreliance on AI can stunt " +
             "your learning and increase the portion of your time spent debugging, and who wants " +
             "to do that?"),
-    FaqData("Is this a scam?", "No. This is part of Hack Club, a 501(c)(3) nonprofit organization " +
-            "that rewards teens across the world for making and shipping technical projects. " + 
-            "You don't just have to take it from me. You can look them up if you want."),
+    FaqData("Is this a scam?", "No. This is part of Hack Club (if approved), a 501(c)(3) nonprofit " +
+            "organization that rewards teens across the world for making and shipping technical " + 
+            "projects. You don't just have to take it from me. You can look them up if you want."),
 ]
 
 for(let i = 0; i < FAQS.length; i++) {

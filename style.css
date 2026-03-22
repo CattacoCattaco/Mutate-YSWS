@@ -49,31 +49,22 @@ body {
   background-color: #71ffbc;
   height: fit-content;
   width: stretch;
-  padding: calc(var(--scale) * 4px) calc(var(--scale) * 4px) 0 calc(var(--scale) * 4px);
+  padding: calc(var(--scale) * 32px) calc(var(--scale) * 4px) 0;
   margin: 0;
-}
-
-#orpheus-flag-link {
-  margin: 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: fit-content;
-  width: fit-content;
-}
-
-area {
-  scale: var(--scale);
 }
 
 #orpheus-flag {
   margin: 0;
   position: fixed;
+  top: calc(var(--scale) * 4px);
   left: 0;
-  right: 0;
   height: calc(var(--scale) * 32px);
   width: calc(var(--scale) * 56px);
   image-rendering: pixelated;
+}
+
+area {
+  scale: var(--scale);
 }
 
 #mutate-header {
@@ -81,8 +72,15 @@ area {
 }
 
 #motto-subheader {
-  margin-block-start: calc(var(--scale) * 2px);
-  margin-block-end: calc(var(--scale) * 16px);
+  margin-block-start: calc(var(--scale) * 5px);
+  margin-block-end: calc(var(--scale) * 32px);
+}
+
+#steps-holder {
+  width: stretch;
+  margin: 0 calc(var(--scale) * -4px);
+  padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px);
+  background-color: #05a067;
 }
 
 #process-description {
@@ -90,14 +88,21 @@ area {
   margin: 0 auto;
 }
 
-#faq-dither {
-  background-image: url(sprites/dither_to_faq.png);
+.dither-bar {
   background-repeat: repeat-x;
   background-size: calc(var(--scale) * 8px) calc(var(--scale) * 23px);
-  margin: calc(var(--scale) * 12px) calc(var(--scale) * -4px) 0;
+  margin: 0 calc(var(--scale) * -4px) 0;
   height: calc(var(--scale) * 23px);
   width: stretch;
   image-rendering: pixelated;
+}
+
+#steps-dither {
+  background-image: url(sprites/dither_to_steps.png);
+}
+
+#faq-dither {
+  background-image: url(sprites/dither_to_faq.png);
 }
 
 #faq-holder {
@@ -155,8 +160,8 @@ h1, h2, h3, p {
 
 h1 {
   font-family: 'Mutated Large';
-  font-size: calc(var(--scale) * 36px);
-  line-height: calc(var(--scale) * 42px);
+  font-size: calc(var(--scale) * 48px);
+  line-height: calc(var(--scale) * 56px);
 }
 
 h2 {
@@ -168,7 +173,7 @@ h2 {
 .large-text {
   font-family: 'Mutated Large';
   font-size: calc(var(--scale) * 16px);
-  line-height: calc(var(--scale) * 20px);
+  line-height: calc(var(--scale) * 21px);
 }
 
 .medium-text {
