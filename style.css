@@ -1,10 +1,10 @@
-@media (width < 450px) {
+@media (width < 550px) {
   :root {
     --scale: 1;
   }
 }
 
-@media (width >= 450px) and (width < 1600px) {
+@media (width >= 550px) and (width < 1600px) {
   :root {
     --scale: 2;
   }
@@ -49,7 +49,7 @@ body {
   background-color: #71ffbc;
   height: fit-content;
   width: stretch;
-  padding: calc(var(--scale) * 32px) calc(var(--scale) * 4px) 0;
+  padding: calc(var(--scale) * 48px) calc(var(--scale) * 4px) 0;
   margin: 0;
 }
 
@@ -67,13 +67,45 @@ area {
   scale: var(--scale);
 }
 
-#mutate-header {
-  margin-block-end: 0px;
+#mutate-logo {
+  height: calc(var(--scale) * 48px);
+  width: calc(var(--scale) * 262px);
+  align-self: center;
+  image-rendering: pixelated;
+  margin: 0 calc((100% - (var(--scale) * 262px)) / 2);
 }
 
 #motto-subheader {
   margin-block-start: calc(var(--scale) * 5px);
-  margin-block-end: calc(var(--scale) * 32px);
+  margin-block-end: calc(var(--scale) * 16px);
+}
+
+.big-button {
+  border-radius: 0;
+  border-width: calc(var(--scale) * 1px);
+  border-style: solid;
+  border-color: #046aa2;
+  background-color: #12e5f0;
+  color: #046aa2;
+  width: min(calc(100% - var(--scale) * 32px), calc(var(--scale) * 350px));
+  margin: calc(var(--scale) * 8px) calc((100% - min(calc(100% - var(--scale) * 32px), calc(var(--scale) * 350px))) / 2);
+  padding: calc(var(--scale) * 2px) calc(var(--scale) * 3px);
+}
+
+.big-button:hover {
+  border-color: #313a42;
+  background-color: #0aa0cb;
+  color: #313a42;
+}
+
+.big-button:active {
+  border-color: #1b2127;
+  background-color: #046aa2;
+  color: #1b2127;
+}
+
+#slack-button {
+  margin-bottom: calc(var(--scale) * 32px);
 }
 
 #steps-holder {
@@ -152,22 +184,11 @@ area {
   border-style: solid;
 }
 
-h1, h2, h3, p {
+p {
   -webkit-font-smoothing: none;
   font-smooth: never;
   font-synthesis-weight: none;
-}
-
-h1 {
-  font-family: 'Mutated Large';
-  font-size: calc(var(--scale) * 48px);
-  line-height: calc(var(--scale) * 56px);
-}
-
-h2 {
-  font-family: 'Mutated Large';
-  font-size: calc(var(--scale) * 24px);
-  line-height: calc(var(--scale) * 28px);
+  color: #1b2127;
 }
 
 .large-text {

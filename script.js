@@ -58,6 +58,7 @@ for(let i = 0; i < FAQS.length; i++) {
     faqButton.classList.add(["text-left"]);
     faqButton.id = `faq-question-${i}`;
     faqButton.setAttribute("onclick", `faqQuestionPressed(${i})`);
+    faqButton.setAttribute("type", "button")
     faqButton.textContent = faqData.question;
     faqPair.appendChild(faqButton);
 
