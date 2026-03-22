@@ -84,23 +84,25 @@ area {
   border-radius: 0;
   border-width: calc(var(--scale) * 1px);
   border-style: solid;
-  border-color: #046aa2;
-  background-color: #12e5f0;
+  background: none;
+  border-image-source: url(sprites/big_button.png);
+  border-image-slice: 4 fill;
+  border-image-width: calc(var(--scale) * 4px);
+  border-image-repeat: repeat;
   color: #046aa2;
   width: min(calc(100% - var(--scale) * 32px), calc(var(--scale) * 350px));
   margin: calc(var(--scale) * 8px) calc((100% - min(calc(100% - var(--scale) * 32px), calc(var(--scale) * 350px))) / 2);
-  padding: calc(var(--scale) * 2px) calc(var(--scale) * 3px);
+  padding: calc(var(--scale) * 5px) calc(var(--scale) * 5px);
+  image-rendering: pixelated;
 }
 
 .big-button:hover {
-  border-color: #313a42;
-  background-color: #0aa0cb;
+  border-image-source: url(sprites/big_button_hovered.png);
   color: #313a42;
 }
 
 .big-button:active {
-  border-color: #1b2127;
-  background-color: #046aa2;
+  border-image-source: url(sprites/big_button_pressed.png);
   color: #1b2127;
 }
 
@@ -153,21 +155,26 @@ area {
   border-radius: 0;
   border-width: calc(var(--scale) * 1px);
   border-style: solid;
-  border-color: #060894;
-  background-color: #56c6ff;
+  background: none;
+  border-image-source: url(sprites/faq_button.png);
+  border-image-slice: 4 fill;
+  border-image-width: calc(var(--scale) * 4px);
+  border-image-repeat: repeat;
+  color: #060894;
   width: stretch;
   margin: 0;
-  padding: calc(var(--scale) * 2px) calc(var(--scale) * 3px);
+  padding: calc(var(--scale) * 4px) calc(var(--scale) * 5px);
+  image-rendering: pixelated;
 }
 
 .faq-question:hover {
-  border-color: #1b2127;
-  background-color: #2d8ef8;
+  border-image-source: url(sprites/faq_button_hovered.png);
+  color: #313a42;
 }
 
 .faq-question:active {
-  border-color: #1b2127;
-  background-color: #123ef0;
+  border-image-source: url(sprites/faq_button_pressed.png);
+  color: #1b2127;
 }
 
 .faq-pair[open="false"] > .faq-answer {
@@ -176,12 +183,14 @@ area {
 
 .faq-pair[open="true"] > .faq-answer {
   visibility: visible;
-  background-color: #2d8ef8;
-  margin: 0;
-  padding: calc(var(--scale) * 2px);
-  border-width: 0 calc(var(--scale) * 1px) calc(var(--scale) * 1px);
-  border-color: #060894;
-  border-style: solid;
+  margin: calc(var(--scale) * -1px) 0 0;
+  background: none;
+  border-image-source: url(sprites/faq_answer.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  color: #060894;
+  padding: calc(var(--scale) * 2px) calc(var(--scale) * 4px) calc(var(--scale) * 3px);
 }
 
 p {
