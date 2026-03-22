@@ -113,8 +113,24 @@ area {
 #steps-holder {
   width: stretch;
   margin: 0 calc(var(--scale) * -4px);
-  padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px);
+  padding: calc(var(--scale) * 24px) calc(var(--scale) * 8px + var(--scale) * 4px);
   background-color: #05a067;
+}
+
+.step {
+  margin: calc(var(--scale) * 8px) calc(var(--scale) * 12px);
+  background: none;
+  border-image-source: url(sprites/step.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  padding: calc(var(--scale) * 6px);
+}
+
+.step-title {
+  margin: 0;
+  margin-bottom: calc(var(--scale) * 2px);
+  color: #046aa2;
 }
 
 #process-description {
@@ -142,7 +158,7 @@ area {
 #faq-holder {
   width: stretch;
   margin: 0 calc(var(--scale) * -4px);
-  padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px) calc(var(--scale) * 20px);
+  padding: calc(var(--scale) * 16px) calc(var(--scale) * 8px + var(--scale) * 4px) calc(var(--scale) * 20px);
   background-color: #12e5f0;
 }
 
