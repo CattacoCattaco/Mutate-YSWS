@@ -140,7 +140,7 @@ area {
 #faq-holder {
   width: stretch;
   margin: 0 calc(var(--scale) * -4px);
-  padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px);
+  padding: calc(var(--scale) * 8px) calc(var(--scale) * 8px + var(--scale) * 4px) calc(var(--scale) * 20px);
   background-color: #12e5f0;
 }
 
