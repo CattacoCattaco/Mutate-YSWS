@@ -199,23 +199,23 @@ area {
 }
 
 #dna {
-  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 27px) / 2) 0;
-  width: calc(var(--scale) * 27px);
-  height: calc(var(--scale) * 75px);
+  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 36px) / 2) 0;
+  width: calc(var(--scale) * 36px);
+  height: calc(var(--scale) * 100px);
   image-rendering: pixelated;
 }
 
-#repeat, #plus {
-  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 48px) / 2) 0;
-  width: calc(var(--scale) * 48px);
-  height: calc(var(--scale) * 48px);
+#repeat, #plus, #steam {
+  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 64px) / 2) 0;
+  width: calc(var(--scale) * 64px);
+  height: calc(var(--scale) * 64px);
   image-rendering: pixelated;
 }
 
 #flask {
-  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 54px) / 2) 0;
-  width: calc(var(--scale) * 54px);
-  height: calc(var(--scale) * 63px);
+  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 72px) / 2) 0;
+  width: calc(var(--scale) * 72px);
+  height: calc(var(--scale) * 84px);
   image-rendering: pixelated;
 }
 
