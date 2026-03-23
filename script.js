@@ -45,11 +45,45 @@ const FAQS = [
             "projects. You don't just have to take it from me. You can look them up if you want."),
 ];
 
+const DEATH_MUTATION = MutationData(
+    "Death",
+    2,
+    "Make the player able to die. (If your player can already die, you may reroll this mutation for free)"
+);
+const ELEMENTAL_MUTATION = MutationData(
+    "Elemental",
+    3,
+    "Add an element system to your game."
+);
+
+const STARTING_PROMPTS = [
+    StartPromptData(
+        1,
+        "Make a game based on chance.",
+        []
+    ),
+    StartPromptData(
+        2,
+        "Make a game based on time.",
+        []
+    ),
+    StartPromptData(
+        3,
+        "Make a game where the player has to die.",
+        [DEATH_MUTATION]
+    ),
+    StartPromptData(
+        2,
+        "Make a game with an element system.",
+        [ELEMENTAL_MUTATION]
+    ),
+];
+
 const MUTATIONS = [
     MutationData(
         "Flame",
         1,
-        "Add a mechanic based on fire or burning to your game"
+        "Add a mechanic based on fire or burning to your game."
     ),
     MutationData(
         "Flight",
@@ -62,15 +96,17 @@ const MUTATIONS = [
         "Add one or more platformer mechanics to your game. (If your game is already a platformer, you may reroll this mutation for free)"
     ),
     MutationData(
-        "Multiplayer",
-        5,
-        "Add multiplayer support to your game"
-    ),
-    MutationData(
         "Roguelove",
         4,
         "Add one or more roguelike mechanics to your game. (If your game is already a roguelike, you may reroll this mutation for free)"
     ),
+    MutationData(
+        "Multiplayer",
+        5,
+        "Add multiplayer support to your game."
+    ),
+    DEATH_MUTATION,
+    ELEMENTAL_MUTATION,
 ];
 
 for(let i = 0; i < FAQS.length; i++) {
@@ -101,12 +137,46 @@ for(let i = 0; i < FAQS.length; i++) {
     faqPair.appendChild(faqAnswer);
 }
 
-let unchosenMutations = MUTATIONS.slice();
+let availableMutations = MUTATIONS.slice();
+let availablePrompts = STARTING_PROMPTS.slice();
+let chosenPrompts = [];
+
+for(let i = 0; i < 3; i++) {
+    let index = Math.floor(Math.random() * availablePrompts.length);
+    let prompt = availablePrompts[index];
+    chosenPrompts.push(prompt);
+    availablePrompts.splice(index, 1);
+    for(let j = 0; j < prompt.invalidMutations.length; j++) {
+        let bannedMutation = prompt.invalidMutations[j];
+        availableMutations.splice(availableMutations.indexOf(bannedMutation), 1);
+    }
+}
+
+for(let i = 0; i < 3; i++) {
+    let prompt = chosenPrompts[i];
+
+    let promptBox = document.createElement("div");
+    promptBox.classList.add(["prompt-box"]);
+    STEP_0.appendChild(promptBox);
+
+    let promptDescription = document.createElement("p");
+    promptDescription.classList.add(["medium-text"]);
+    promptDescription.classList.add(["text-left"]);
+    promptDescription.textContent = `Prompt: ${prompt.description}`;
+    promptBox.appendChild(promptDescription);
+
+    let promptComplexity = document.createElement("p");
+    promptComplexity.classList.add(["medium-text"]);
+    promptComplexity.classList.add(["text-center"]);
+    promptComplexity.textContent = `Complexity: ${prompt.complexity}/3`;
+    promptBox.appendChild(promptComplexity);
+}
+
 let chosenMutations = [];
 for(let i = 0; i < 3; i++) {
-    let index = Math.floor(Math.random() * unchosenMutations.length);
-    chosenMutations.push(unchosenMutations[index]);
-    unchosenMutations.splice(index, 1);
+    let index = Math.floor(Math.random() * availableMutations.length);
+    chosenMutations.push(availableMutations[index]);
+    availableMutations.splice(index, 1);
 }
 
 for(let i = 0; i < 3; i++) {
@@ -114,7 +184,6 @@ for(let i = 0; i < 3; i++) {
 
     let mutationBox = document.createElement("div");
     mutationBox.classList.add(["mutation-box"]);
-    mutationBox.id = `mutation-box-${i}`;
     STEP_1.appendChild(mutationBox);
 
     let mutationName = document.createElement("p");
@@ -282,6 +351,14 @@ function FaqData(question, answer) {
     return {
         question: question,
         answer: answer,
+    }
+}
+
+function StartPromptData(complexity, description, invalidMutations) {
+    return {
+        complexity: complexity,
+        description: description,
+        invalidMutations: invalidMutations,
     }
 }
 
