@@ -1,6 +1,8 @@
-const ORPHEUS_FLAG = document.getElementById("orpheus-flag")
-const FLAG_AREA = document.getElementById("orpheus-flag-area")
-const FAQ_HOLDER = document.getElementById("faq-holder")
+const ORPHEUS_FLAG = document.getElementById("orpheus-flag");
+const FLAG_AREA = document.getElementById("orpheus-flag-area");
+const STEP_0 = document.getElementById("step-0");
+const STEP_1 = document.getElementById("step-1");
+const FAQ_HOLDER = document.getElementById("faq-holder");
 
 const FAQS = [
     FaqData("Is this currently running?", "No. Currently this YSWS is only in development. " +
@@ -41,7 +43,35 @@ const FAQS = [
     FaqData("Is this a scam?", "No. This is part of Hack Club (if approved), a 501(c)(3) nonprofit " +
             "organization that rewards teens across the world for making and shipping technical " + 
             "projects. You don't just have to take it from me. You can look them up if you want."),
-]
+];
+
+const MUTATIONS = [
+    MutationData(
+        "Flame",
+        1,
+        "Add a mechanic based on fire or burning to your game"
+    ),
+    MutationData(
+        "Flight",
+        2,
+        "Add a mechanic that allows the player or some other character to fly."
+    ),
+    MutationData(
+        "Platforming",
+        3,
+        "Add one or more platformer mechanics to your game. (If your game is already a platformer, you may reroll this mutation for free)"
+    ),
+    MutationData(
+        "Multiplayer",
+        5,
+        "Add multiplayer support to your game"
+    ),
+    MutationData(
+        "Roguelove",
+        4,
+        "Add one or more roguelike mechanics to your game. (If your game is already a roguelike, you may reroll this mutation for free)"
+    ),
+];
 
 for(let i = 0; i < FAQS.length; i++) {
     let faqData = FAQS[i];
@@ -69,6 +99,41 @@ for(let i = 0; i < FAQS.length; i++) {
     faqAnswer.id = `faq-answer-${i}`;
     faqAnswer.textContent = faqData.answer;
     faqPair.appendChild(faqAnswer);
+}
+
+let unchosenMutations = MUTATIONS.slice();
+let chosenMutations = [];
+for(let i = 0; i < 3; i++) {
+    let index = Math.floor(Math.random() * unchosenMutations.length);
+    chosenMutations.push(unchosenMutations[index]);
+    unchosenMutations.splice(index, 1);
+}
+
+for(let i = 0; i < 3; i++) {
+    let mutation = chosenMutations[i];
+
+    let mutationBox = document.createElement("div");
+    mutationBox.classList.add(["mutation-box"]);
+    mutationBox.id = `mutation-box-${i}`;
+    STEP_1.appendChild(mutationBox);
+
+    let mutationName = document.createElement("p");
+    mutationName.classList.add(["large-text"]);
+    mutationName.classList.add(["text-center"]);
+    mutationName.textContent = mutation.name;
+    mutationBox.appendChild(mutationName);
+
+    let mutationComplexity = document.createElement("p");
+    mutationComplexity.classList.add(["medium-text"]);
+    mutationComplexity.classList.add(["text-center"]);
+    mutationComplexity.textContent = `Complexity: ${mutation.complexity}/5`;
+    mutationBox.appendChild(mutationComplexity);
+
+    let mutationDescription = document.createElement("p");
+    mutationDescription.classList.add(["small-text"]);
+    mutationDescription.classList.add(["text-left"]);
+    mutationDescription.textContent = mutation.description;
+    mutationBox.appendChild(mutationDescription);
 }
 
 rescaleFlagArea()
@@ -217,5 +282,13 @@ function FaqData(question, answer) {
     return {
         question: question,
         answer: answer,
+    }
+}
+
+function MutationData(name, complexity, description) {
+    return {
+        name: name,
+        complexity: complexity,
+        description: description,
     }
 }
