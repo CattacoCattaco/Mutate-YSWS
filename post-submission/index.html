@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mutate</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <img src="sprites/orpheus_flag.png" alt="Orpheus holding flag" id="orpheus-flag" usemap="#flag-map"/>
+  <map name="flag-map">
+    <area shape="poly" href="https://hackclub.com/" alt="Orpheus Flag" id="orpheus-flag-area" onmouseenter="flagHovered()" onmouseleave="flagUnhovered()" onmousedown="flagPressed()" onmouseup="flagUnpressed()">
+  </map>
+  <img src="sprites/mutate_logo.png" alt="Mutate Logo" id="mutate-logo"/>
+  <p class="large-text text-center" id="motto-subheader">Adapt your game to fit your mutations.<br>Adapt your mutations to fit your game.</p>
+  <button class="large-text text-center big-button" id="rsvp-button" onclick="window.open('https://rsvp.hackclub.community/mutate')" type="button">RSVP</button>
+  <button class="large-text text-center big-button" id="slack-button" onclick="window.open('https://hackclub.enterprise.slack.com/archives/C0AM5T8FWEN')" type="button">Join the Slack channel</button>
+  <div class="dither-bar" id="steps-dither"></div>
+  <div id="steps-holder">
+    <div class="step" id="step-0">
+      <p class="medium-text text-left step-title">0.) Start building a game based on your starting prompt</p>
+    </div>
+    <div class="step" id="step-1">
+      <p class="medium-text text-left step-title">1.) Choose a new mutation</p>
+    </div>
+    <div class="step" id="step-2">
+      <p class="medium-text text-left step-title">2.) Add it to your game (Try to get creative to make it fit your game)</p>
+      <div id="example-code">
+        <p class="medium-text text-left">
+          <span class="var">var</span> <span class="name">x</span>: <span class="type">int</span> = <span class="num">10</span>
+          <br><br><span class="flow">for</span> <span class="name">i</span> <span class="var">in</span> <span class="func">range</span>(<span class="name">x</span>):
+          <br>&nbsp;&nbsp;&nbsp;<span class="name">x</span> -= <span class="name">i</span>
+          <br>&nbsp;&nbsp;&nbsp;<span class="func">print</span>(<span class="string">"Hi. I'm a creative implementation of the prompt"</span>)
+          <br>&nbsp;&nbsp;&nbsp;<span class="func">print</span>(<span class="string">"I wrote this!"</span>)
+          <br><br><span class="func">print</span>(<span class="name">x</span>)
+        </p>
+      </div>
+    </div>
+    <div class="step" id="step-3">
+      <p class="medium-text text-left step-title">3.) Complete the mutation by writing a short devlog describing what you did</p>
+      <div class="prompt-box">
+        <p class="medium-text text-left">Mutation: Flame</p>
+        <p class="small-text text-left">I made a new enemy type that shoots fireballs that damage the player until they go into the water.</p>
+      </div>
+    </div>
+    <div class="step" id="step-4">
+      <p class="medium-text text-left step-title">4.) Get DNA to spend on rerolls and minigames</p>
+      <img src="sprites/dna.png" alt="DNA" id="dna"/>
+    </div>
+    <div class="step" id="step-5">
+      <p class="medium-text text-left step-title">5.) Repeat from step 1 OR go to step 6</p>
+      <img src="sprites/repeat.png" alt="Repeat" id="repeat"/>
+    </div>
+    <div class="step" id="step-6">
+      <p class="medium-text text-left step-title">6.) Ship your project to get flasks</p>
+      <img src="sprites/flask.png" alt="Flask" id="flask"/>
+    </div>
+    <div class="step" id="step-7">
+      <p class="medium-text text-left step-title">7.) Spend your flasks on real world prizes</p>
+      <img src="sprites/steam.png" alt="Steam Logo" id="steam"/>
+    </div>
+    <div class="step" id="step-8">
+      <p class="medium-text text-left step-title">8.) Add more to your game or make a new one!</p>
+      <img src="sprites/plus.png" alt="Plus" id="plus"/>
+    </div>
+  </div>
+  <div class="dither-bar" id="faq-dither"></div>
+  <div id="faq-holder"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

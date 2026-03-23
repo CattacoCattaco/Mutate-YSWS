@@ -1,0 +1,328 @@
+@media (width < 550px) {
+  :root {
+    --scale: 1;
+  }
+}
+
+@media (width >= 550px) and (width < 1600px) {
+  :root {
+    --scale: 2;
+  }
+}
+
+@media (width >= 1600px) and (width < 2700px) {
+  :root {
+    --scale: 3;
+  }
+}
+
+@media (width >= 2700px) {
+  :root {
+    --scale: 4;
+  }
+}
+
+@font-face {
+  font-family: 'Mutated Small';
+  src: url(fonts/Mutated\ Small.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mutated Medium';
+  src: url(fonts/Mutated\ Medium.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mutated Large';
+  src: url(fonts/Mutated\ Large.ttf);
+  font-display: swap;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #71ffbc;
+  height: fit-content;
+  width: stretch;
+  padding: calc(var(--scale) * 48px) calc(var(--scale) * 4px) 0;
+  margin: 0;
+}
+
+#orpheus-flag {
+  margin: 0;
+  position: fixed;
+  top: calc(var(--scale) * 4px);
+  left: 0;
+  height: calc(var(--scale) * 32px);
+  width: calc(var(--scale) * 56px);
+  image-rendering: pixelated;
+}
+
+area {
+  scale: var(--scale);
+}
+
+#mutate-logo {
+  height: calc(var(--scale) * 48px);
+  width: calc(var(--scale) * 262px);
+  align-self: center;
+  image-rendering: pixelated;
+  margin: 0 calc((100% - (var(--scale) * 262px)) / 2);
+}
+
+#motto-subheader {
+  margin-block-start: calc(var(--scale) * 5px);
+  margin-block-end: calc(var(--scale) * 16px);
+}
+
+.big-button {
+  border-radius: 0;
+  border-width: calc(var(--scale) * 1px);
+  border-style: solid;
+  background: none;
+  border-image-source: url(sprites/big_button.png);
+  border-image-slice: 4 fill;
+  border-image-width: calc(var(--scale) * 4px);
+  border-image-repeat: repeat;
+  color: #046aa2;
+  width: min(calc(100% - var(--scale) * 32px), calc(var(--scale) * 350px));
+  margin: calc(var(--scale) * 8px) calc((100% - min(calc(100% - var(--scale) * 32px), calc(var(--scale) * 350px))) / 2);
+  padding: calc(var(--scale) * 5px) calc(var(--scale) * 5px);
+  image-rendering: pixelated;
+}
+
+.big-button:hover {
+  border-image-source: url(sprites/big_button_hovered.png);
+  color: #313a42;
+}
+
+.big-button:active {
+  border-image-source: url(sprites/big_button_pressed.png);
+  color: #1b2127;
+}
+
+#slack-button {
+  margin-bottom: calc(var(--scale) * 32px);
+}
+
+#steps-holder {
+  width: stretch;
+  margin: 0 calc(var(--scale) * -4px);
+  padding: calc(var(--scale) * 24px) calc(var(--scale) * 8px + var(--scale) * 4px);
+  background-color: #05a067;
+}
+
+.step {
+  margin: calc(var(--scale) * 8px) calc(var(--scale) * 12px);
+  background: none;
+  border-image-source: url(sprites/step.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  padding: calc(var(--scale) * 12px);
+}
+
+.step-title {
+  margin: 0;
+  color: #046aa2;
+}
+
+.prompt-box {
+  background: none;
+  border-image-source: url(sprites/prompt.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  padding: calc(var(--scale) * 6px);
+  padding-bottom: calc(var(--scale) * 4px);
+  width: fit-content;
+  margin: calc(var(--scale) * 7px) auto 0;
+  & >p {
+    margin: 0 0 calc(var(--scale) * 2px);
+    color: #046aa2;
+  }
+}
+
+.mutation-box {
+  background: none;
+  border-image-source: url(sprites/mutation.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  padding: calc(var(--scale) * 6px);
+  padding-bottom: calc(var(--scale) * 4px);
+  max-width: calc(var(--scale) * 300px);
+  margin: calc(var(--scale) * 7px) auto 0;
+  & >p {
+    margin: 0 0 calc(var(--scale) * 2px);
+    color: #046aa2;
+  }
+}
+
+#example-code {
+  margin: calc(var(--scale) * 7px) auto 0;
+  padding: calc(var(--scale) * 3px);
+  background: #1b2127;
+  & >p {
+    margin: 0;
+    color: #adced1;
+    & >span {
+      margin: 0;
+    }
+    & >span.var {
+      color: #fb4c27;
+    }
+    & >span.name {
+      color: #839fa5;
+    }
+    & >span.type {
+      color: #4df012;
+    }
+    & >span.num {
+      color: #03c63a;
+    }
+    & >span.flow {
+      color: #ff65c1;
+    }
+    & >span.func {
+      color: #bc1cf7;
+    }
+    & >span.string {
+      color: #fcec3b;
+    }
+  }
+}
+
+#dna {
+  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 36px) / 2) 0;
+  width: calc(var(--scale) * 36px);
+  height: calc(var(--scale) * 100px);
+  image-rendering: pixelated;
+}
+
+#repeat, #plus, #steam {
+  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 64px) / 2) 0;
+  width: calc(var(--scale) * 64px);
+  height: calc(var(--scale) * 64px);
+  image-rendering: pixelated;
+}
+
+#flask {
+  margin: calc(var(--scale) * 7px) calc((100% - var(--scale) * 72px) / 2) 0;
+  width: calc(var(--scale) * 72px);
+  height: calc(var(--scale) * 84px);
+  image-rendering: pixelated;
+}
+
+.dither-bar {
+  background-repeat: repeat-x;
+  background-size: calc(var(--scale) * 8px) calc(var(--scale) * 23px);
+  margin: 0 calc(var(--scale) * -4px) 0;
+  height: calc(var(--scale) * 23px);
+  width: stretch;
+  image-rendering: pixelated;
+}
+
+#steps-dither {
+  background-image: url(sprites/dither_to_steps.png);
+}
+
+#faq-dither {
+  background-image: url(sprites/dither_to_faq.png);
+}
+
+#faq-holder {
+  width: stretch;
+  margin: 0 calc(var(--scale) * -4px);
+  padding: calc(var(--scale) * 16px) calc(var(--scale) * 8px + var(--scale) * 4px) calc(var(--scale) * 20px);
+  background-color: #12e5f0;
+}
+
+.faq-pair {
+  width: auto;
+  padding: calc(var(--scale) * 2px);
+}
+
+.faq-question{
+  border-radius: 0;
+  border-width: calc(var(--scale) * 1px);
+  border-style: solid;
+  background: none;
+  border-image-source: url(sprites/faq_button.png);
+  border-image-slice: 4 fill;
+  border-image-width: calc(var(--scale) * 4px);
+  border-image-repeat: repeat;
+  color: #060894;
+  width: stretch;
+  margin: 0;
+  padding: calc(var(--scale) * 4px) calc(var(--scale) * 5px);
+  image-rendering: pixelated;
+}
+
+.faq-question:hover {
+  border-image-source: url(sprites/faq_button_hovered.png);
+  color: #313a42;
+}
+
+.faq-question:active {
+  border-image-source: url(sprites/faq_button_pressed.png);
+  color: #1b2127;
+}
+
+.faq-pair[open="false"] > .faq-answer {
+  display: none;
+}
+
+.faq-pair[open="true"] > .faq-answer {
+  visibility: visible;
+  margin: calc(var(--scale) * -1px) 0 0;
+  background: none;
+  border-image-source: url(sprites/faq_answer.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  color: #060894;
+  padding: calc(var(--scale) * 2px) calc(var(--scale) * 4px) calc(var(--scale) * 3px);
+}
+
+p, p > span {
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  font-synthesis-weight: none;
+  color: #1b2127;
+}
+
+.large-text, .large-text > span {
+  font-family: 'Mutated Large';
+  font-size: calc(var(--scale) * 16px);
+  line-height: calc(var(--scale) * 21px);
+}
+
+.medium-text, .medium-text > span {
+  font-family: 'Mutated Medium';
+  font-size: calc(var(--scale) * 8px);
+  line-height: calc(var(--scale) * 10px);
+}
+
+.small-text, .small-text > span {
+  font-family: 'Mutated Small';
+  font-size: calc(var(--scale) * 5px);
+  line-height: calc(var(--scale) * 7px);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
