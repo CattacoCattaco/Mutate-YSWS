@@ -129,13 +129,23 @@ area {
 
 .step-title {
   margin: 0;
-  margin-bottom: calc(var(--scale) * 2px);
   color: #046aa2;
 }
 
-#process-description {
-  display: table;
-  margin: 0 auto;
+.prompt-box {
+  background: none;
+  border-image-source: url(sprites/prompt.png);
+  border-image-slice: 3 fill;
+  border-image-width: calc(var(--scale) * 3px);
+  border-image-repeat: repeat;
+  padding: calc(var(--scale) * 6px);
+  padding-bottom: calc(var(--scale) * 4px);
+  width: fit-content;
+  margin: calc(var(--scale) * 7px) auto 0;
+  & >p {
+    margin: 0 0 calc(var(--scale) * 2px);
+    color: #046aa2;
+  }
 }
 
 .dither-bar {
