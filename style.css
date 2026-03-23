@@ -164,6 +164,40 @@ area {
   }
 }
 
+#example-code {
+  margin: calc(var(--scale) * 7px) auto 0;
+  padding: calc(var(--scale) * 3px);
+  background: #1b2127;
+  & >p {
+    margin: 0;
+    color: #adced1;
+    & >span {
+      margin: 0;
+    }
+    & >span.var {
+      color: #fb4c27;
+    }
+    & >span.name {
+      color: #839fa5;
+    }
+    & >span.type {
+      color: #4df012;
+    }
+    & >span.num {
+      color: #03c63a;
+    }
+    & >span.flow {
+      color: #ff65c1;
+    }
+    & >span.func {
+      color: #bc1cf7;
+    }
+    & >span.string {
+      color: #fcec3b;
+    }
+  }
+}
+
 .dither-bar {
   background-repeat: repeat-x;
   background-size: calc(var(--scale) * 8px) calc(var(--scale) * 23px);
@@ -235,26 +269,26 @@ area {
   padding: calc(var(--scale) * 2px) calc(var(--scale) * 4px) calc(var(--scale) * 3px);
 }
 
-p {
+p, p > span {
   -webkit-font-smoothing: none;
   font-smooth: never;
   font-synthesis-weight: none;
   color: #1b2127;
 }
 
-.large-text {
+.large-text, .large-text > span {
   font-family: 'Mutated Large';
   font-size: calc(var(--scale) * 16px);
   line-height: calc(var(--scale) * 21px);
 }
 
-.medium-text {
+.medium-text, .medium-text > span {
   font-family: 'Mutated Medium';
   font-size: calc(var(--scale) * 8px);
   line-height: calc(var(--scale) * 10px);
 }
 
-.small-text {
+.small-text, .small-text > span {
   font-family: 'Mutated Small';
   font-size: calc(var(--scale) * 5px);
   line-height: calc(var(--scale) * 7px);
